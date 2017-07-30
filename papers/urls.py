@@ -54,6 +54,9 @@ urlpatterns = [
             views.InstitutionView.as_view(), name='institution'),
         url(r'^institutions$',
             views.InstitutionsMapView.as_view(), name='institutions-map'),
+        # Copyright Transfer Aggreement views
+        url(r'cta/\w+/$',
+            viewr.CtaView.as_view(), name='copyright-transfer-aggreement'),
         # Tasks, AJAX
         url(r'^ajax/', include('papers.ajax')),
         url(r'^researcher/(?P<pk>\d+)/update/$',

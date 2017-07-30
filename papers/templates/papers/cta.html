@@ -148,30 +148,7 @@ $(function(){
 {% endblock %}
 
 
-
 {% block details %}
 
 {% include "papers/paperDetails.html" with paper=paper %}
-{% endblock %}
-
-{% block cta %}
-
-<div id="cta">
-  <!--By default, ask to upload CTA for each paper-->
-  <p>Please upload the Copyright Transfer Aggreement you have signed with the publisher.</p>
-  <input id="cta-file-input"></input>
-  <button id="upload-cta-btn" onclick="send-cta()">Upload</button>
-</div>
-
-<script>
-send-cta = function(){
-file = $('#cta-file-input').val();
-// upload file
-$.post({
-"url": "http://cta-store.test",
-"data": {"path": file},
-});
-}
-</script>
-
 {% endblock %}

@@ -94,6 +94,8 @@ from papers.utils import validate_orcid
 from papers.utils import iunaccent
 from publishers.models import Journal
 from publishers.models import Publisher
+#from cta.models import Cta
+#from publishers.models import BareCta
 from solo.models import SingletonModel
 from search import SearchQuerySet
 
@@ -1298,6 +1300,11 @@ class Paper(models.Model, BarePaper):
                 index.update_object(self, using=using)
             except haystack.exceptions.NotHandled:
                 pass
+
+# Copyright Transfer Agreement
+
+class CTA():
+    pass
 
 # Rough data extracted through OAI-PMH
 
